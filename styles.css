@@ -1,0 +1,25 @@
+.lc_header {
+    cursor: pointer;
+	margin-top: 5px; 
+/*  background: #d6d7d3;*/
+}
+
+.lc_header.collapsed ul{
+    background-image: url([[pix:t/collapsed]]);
+    background-position: 2px 50%;
+    background-repeat: no-repeat;
+    margin: 0;    
+}
+
+.lc_header.expanded ul {
+    background-image: url([[pix:t/expanded]]);
+    background-position: 2px 50%;
+    background-repeat: no-repeat;
+    margin: 0;   
+} 
+
+.lc_header li{
+    list-style-type: none;
+    list-style: none;
+    margin-left: 20px;
+}
