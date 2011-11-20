@@ -39,14 +39,18 @@ function labelcollapsed_get_html_content(cm_info $cm) {
     $lc = $DB->get_record('labelcollapsed', array('id' => $cm->instance));
     $intro = format_module_intro('labelcollapsed', $lc, $cm->id);
     $javastr = 'javascript:toggle(\'lcc'.$cm->instance.'\',\'lch'.$cm->instance.'\');';
-
-    $content = '
-    <div id="lch'.$cm->instance.'" class="lc_header collapsed" onclick="'.$javastr.'">        
-        <ul ><li>'.$cm->name.'</li></ul>
-    </div>   
-    <div id="lcc'.$cm->instance.'" class="lc_content" style="display: none;">'.
-            $intro . 
-   '</div>';
-	
-   return $content;
+    
+    $content = html_writer::start_tag('div', array('id' => 'lch'.$cm->instance, 'class' => 'lc_header collapsed', 'onclick' => $javastr));
+    $content .= html_writer::start_tag('ul');
+    $content .= html_writer::start_tag('li');
+    $content .= $cm->name;
+    $content .= html_writer::end_tag('li');
+    $content .= html_writer::end_tag('ul');
+    $content .= html_writer::end_tag('div');
+    
+    $content .= html_writer::start_tag('div', array('id' => 'lcc'.$cm->instance,  'class' => 'lc_content', 'style' => 'display: none;'));
+    $content .= $intro;
+    $content .= html_writer::end_tag('div');
+    
+    return $content;
 }
