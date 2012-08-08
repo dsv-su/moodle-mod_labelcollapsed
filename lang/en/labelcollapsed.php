@@ -23,6 +23,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+$string['labelcollapsed:addinstance'] = 'Add a new collapsed label';
 $string['labelcollapsedtext'] = 'Collapsed text';
 $string['labelcollapsedheader'] = 'Header';
 $string['modulename'] = 'Label Collapsed';

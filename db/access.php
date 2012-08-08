@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -16,18 +15,28 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Capability definitions for the label module.
  *
- * @package    mod
- * @subpackage labelcollapsed
- * @copyright  2011 Thomas Alsén
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    mod_labelcollapsed
+ * @copyright  2012 Department of Computer and Systems Sciences
+ *                  Stockholm University
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or late
  */
 
-$string['labelcollapsed:addinstance'] = 'Lägg till ny hopfällbar text';
-$string['labelcollapsedtext'] = 'Hopfällbar text';
-$string['labelcollapsedheader'] = 'Rubrik';
-$string['modulename'] = 'Hopfällbar etikett';
-$string['modulename_help'] = 'En hopfällbar etikett möjliggör att text och bilder infogas bland aktivitets länkar på kursens hemsida.';
-$string['modulenameplural'] = 'Hopfällbara etiketter';
-$string['pluginadministration'] = 'Hopfällbar etikett administration';
-$string['pluginname'] = 'Hopfällbar etikett';
+defined('MOODLE_INTERNAL') || die();
+
+$capabilities = array(
+
+    'mod/labelcollapsed:addinstance' => array(
+        'riskbitmask' => RISK_XSS,
+
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes' => array(
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW
+        ),
+        'clonepermissionsfrom' => 'moodle/course:manageactivities'
+    ),
+
+);
