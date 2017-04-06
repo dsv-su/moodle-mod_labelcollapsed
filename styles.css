@@ -1,25 +1,37 @@
-.lc_header {
+.modtype_labelcollapsed .lc_header {
     cursor: pointer;
 	margin-top: 5px; 
 /*  background: #d6d7d3;*/
 }
 
-.lc_header.collapsed ul{
-    background-image: url([[pix:t/collapsed]]);
+.modtype_labelcollapsed .lc_header ul {
+    background-image: url([[pix:t/expanded]]);
     background-position: 2px 50%;
     background-repeat: no-repeat;
     margin: 0;    
 }
 
-.lc_header.expanded ul {
-    background-image: url([[pix:t/expanded]]);
-    background-position: 2px 50%;
-    background-repeat: no-repeat;
-    margin: 0;   
-} 
-
-.lc_header li{
+.modtype_labelcollapsed .lc_header li {
     list-style-type: none;
     list-style: none;
     margin-left: 20px;
+}
+
+.modtype_labelcollapsed .lc_content {
+    display: block;
+}
+
+body.jsenabled .modtype_labelcollapsed .lc_header ul {
+    background-image: url([[pix:t/collapsed]]);
+}
+
+body.jsenabled .modtype_labelcollapsed.expanded .lc_header ul {
+    background-image: url([[pix:t/expanded]]);
+} 
+
+body.jsenabled .modtype_labelcollapsed .lc_content {
+    display: none;
+}
+body.jsenabled .modtype_labelcollapsed.expanded .lc_content {
+    display: block;
 }
