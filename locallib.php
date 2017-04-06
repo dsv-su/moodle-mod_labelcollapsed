@@ -43,7 +43,9 @@ function labelcollapsed_get_html_content(cm_info $cm) {
     $content = html_writer::start_tag('div', array('id' => 'lch'.$cm->instance, 'class' => 'lc_header collapsed', 'onclick' => $javastr));
     $content .= html_writer::start_tag('ul');
     $content .= html_writer::start_tag('li');
+    $content .= html_writer::start_tag('span', array('class' => 'nolink'));
     $content .= $cm->name;
+    $content .= html_writer::end_tag('span');
     $content .= html_writer::end_tag('li');
     $content .= html_writer::end_tag('ul');
     $content .= html_writer::end_tag('div');
