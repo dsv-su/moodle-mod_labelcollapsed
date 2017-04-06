@@ -35,12 +35,11 @@ class mod_labelcollapsed_mod_form extends moodleform_mod {
         $mform = $this->_form;
 
         $mform->addElement('text', 'name', get_string('labelcollapsedheader', 'labelcollapsed'), array('size'=>'64'));
+        $mform->setType('name', PARAM_TEXT);
         $mform->addRule('name', null, 'required', null, 'client');
         $mform->addRule('name', get_string('maximumchars', '', 50), 'maxlength', 50, 'client');
-        
-        $this->add_intro_editor(true, get_string('labelcollapsedtext', 'labelcollapsed'));
+        $this->standard_intro_elements(get_string('labelcollapsedtext', 'labelcollapsed'));
 
-        
         $this->standard_coursemodule_elements();
 
         $this->add_action_buttons(true, false, null);
